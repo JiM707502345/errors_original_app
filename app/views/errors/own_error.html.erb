@@ -1,0 +1,19 @@
+<%= render "shared/header" %>
+
+<%#= メイン画面 %>
+<div class="wrapper">
+  <div class="side-bar">
+    <%= render "shared/side-bar" %>
+  </div>
+  <div class="error">
+    <% if @errors.blank? %>
+          <div class="not-errors">
+            <%= image_tag("errorlogo2.jpg", class:"not-errors-logo") %><br>
+            <p class="not-errors-message"><%= "※条件に一致する結果が見つかりませんでした。"%>
+          </div>
+      <% else %>
+        <%= render "shared/main-error" %>
+      <% end %>
+  </div>
+</div>
+<%#= メイン画面 %>

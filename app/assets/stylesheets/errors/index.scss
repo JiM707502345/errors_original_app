@@ -1,0 +1,40 @@
+.wrapper {
+  display: flex;
+}
+.side-bar {
+  background-color: #ce0f19;
+  width: 150px;
+  height: 100vh;
+}
+.error {
+  position: relative;
+  background-color: #ffffff;
+  width: calc(100% - 150px);
+  overflow: scroll;
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+}
+
+.mail-bottom{
+  position: absolute;
+  bottom: 0;
+}
+
+.not-errors{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+}
+.not-errors-logo{
+  width: 30%;
+  height: 30%;
+}
+.not-errors-welcome-message{
+  font-size: 55px;
+  color: #ce0f19;
+}
+.not-errors-message{
+  font-size: 12px;
+  color: #35465c;
+}

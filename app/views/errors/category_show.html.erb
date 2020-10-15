@@ -1,0 +1,86 @@
+<%= render "shared/header" %>
+
+<%#= メイン画面 %>
+<div class="wrapper">
+  <div class="side-bar">
+    <%= render "shared/side-bar" %>
+  </div>
+  <div class="error-category-all">
+    <div class="one-error-category">
+     <ul class="error-category">
+     <h1 class="error-category-title">業界で調べる</h1>
+      <li><%= link_to '金融', industry_errors_path(industry_id: 2), mthod: :get, class:"pull-down-list" %></li>
+      <li><%= link_to 'IT/メディア', industry_errors_path(industry_id: 3), method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to '自動車/機械', industry_errors_path(industry_id: 4),method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to '小売/卸', industry_errors_path(industry_id: 5), method: :get,class:"pull-down-list" %></li>
+      <li><%= link_to '商社', industry_errors_path(industry_id: 6), method: :get,class:"pull-down-list" %></li>
+      <li><%= link_to 'サービス', industry_errors_path(industry_id: 7), method: :get,class:"pull-down-list" %></li>
+      <li><%= link_to '建設/不動産', industry_errors_path(industry_id: 8), method: :get,class:"pull-down-list" %></li>
+      <li><%= link_to '物流/運送', industry_errors_path(industry_id: 9),method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to 'エネルギー/資源', industry_errors_path(industry_id: 10), method: :get,class:"pull-down-list" %></li>
+      <li><%= link_to '電気/精密', industry_errors_path(industry_id: 11), method: :get,class:"pull-down-list" %></li>
+      <li><%= link_to '食品', industry_errors_path(industry_id: 12), method: :get,class:"pull-down-list" %></li>
+      <li><%= link_to '飲食', industry_errors_path(industry_id: 13), method: :get,class:"pull-down-list" %></li>
+      <li><%= link_to '生活関連', industry_errors_path(industry_id: 14),method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to '医療/装飾', industry_errors_path(industry_id: 15), method: :get,class:"pull-down-list" %></li>
+      <li><%= link_to '娯楽/レジャー', industry_errors_path(industry_id: 16), method: :get,class:"pull-down-list" %></li>
+      <li><%= link_to '官公庁/公社/団体', industry_errors_path(industry_id: 17), method: :get,class:"pull-down-list" %></li>
+      <li><%= link_to '医療/福祉', industry_errors_path(industry_id: 18),method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to 'その他', industry_errors_path(industry_id: 19), method: :get,class:"pull-down-list" %></li>
+     </ul>
+    </div>
+
+    <div class="one-error-category">
+     <ul class="error-category">
+     <h1 class="error-category-title">失敗原因で調べる</h1>
+      <li><%= link_to '未知', own_error_errors_path(own_error_id: 2), method: :get,  class:"pull-down-list" %></li>
+      <li><%= link_to '無知', own_error_errors_path(own_error_id: 3), method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to '不注意', own_error_errors_path(own_error_id: 4), method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to '手順の不順守', own_error_errors_path(own_error_id: 5), method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to '誤判断', own_error_errors_path(own_error_id: 6), method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to '調査・検討の不足', own_error_errors_path(own_error_id: 7), method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to '帰省条件の変化', own_error_errors_path(own_error_id: 8), method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to '企画不良', own_error_errors_path(own_error_id: 9), method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to '価値観不良', own_error_errors_path(own_error_id: 10), method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to '組織運営不良', own_error_errors_path(own_error_id: 11), method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to 'その他', own_error_errors_path(own_error_id: 12), method: :get, class:"pull-down-list" %></li>
+     </ul>
+    </div>
+
+    <div class="one-error-category">
+     <ul class="error-category">
+     <h1 class="error-category-title">失敗の人的要因で調べる</h1>
+      <li><%= link_to '気分（高揚/沈潜）', human_factor_errors_path(human_factor_id: 2), method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to '欲得（経済的/地位）', human_factor_errors_path(human_factor_id: 3), method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to '自失（無判断/未知遭遇）', human_factor_errors_path(human_factor_id: 4), method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to '思い入れが逆に働いた（生きがい/使命感）', human_factor_errors_path(human_factor_id: 5), method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to '横着（手抜き/責任転嫁）', human_factor_errors_path(human_factor_id: 6), method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to 'プライド（体裁/ええ格好）', human_factor_errors_path(human_factor_id: 7), method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to '惰性（性癖/習慣/行き掛かり/思い込み）', human_factor_errors_path(human_factor_id: 8), method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to '決まり違反（無知/無視/手抜き）', human_factor_errors_path(human_factor_id: 9), method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to '考え不足（浅慮/無思慮）', human_factor_errors_path(human_factor_id: 10), method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to 'うっかり（誤判断/忘却/看過）', human_factor_errors_path(human_factor_id: 11), method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to 'その他', human_factor_errors_path(human_factor_id: 12), method: :get, class:"pull-down-list" %></li>
+     </ul>
+    </div>
+
+    <div class="one-error-category">
+     <ul class="error-category">
+     <h1 class="error-category-title">失敗した時の頭の中で調べる</h1>
+      <li><%= link_to '責任の所在（自己責任/他人への文句/責任転嫁）', in_my_head_errors_path(in_my_head_id: 2), method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to '自分の身に生じる事柄（叱責/事故処分/退任）', in_my_head_errors_path(in_my_head_id: 3), method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to '周囲の反響（そしり/陰口/批判）', in_my_head_errors_path(in_my_head_id: 4), method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to '事故の内部での吸収（反省/後悔/言い訳/正当化）', in_my_head_errors_path(in_my_head_id: 5), method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to 'ごまかしの対応行動（自虐/忘却/看過/隠蔽）', in_my_head_errors_path(in_my_head_id: 6), method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to '対策（改革/文化の改変/失敗情報の伝達/教育/人事）', in_my_head_errors_path(in_my_head_id: 7), method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to '失敗の自覚（認めたくない/見ない/覚悟して認める/嫌々認める/否認）', in_my_head_errors_path(in_my_head_id: 8), method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to '原因推定（組織/経過の回想/シミュレーション/聞き伝え）', in_my_head_errors_path(in_my_head_id: 9), method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to '事業続行の方策（法的措置/計画修正/顧客）', in_my_head_errors_path(in_my_head_id: 10), method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to '周囲組織への影響（従業員/株主/銀行/取引先/資本）', in_my_head_errors_path(in_my_head_id: 11), method: :get, class:"pull-down-list" %></li>
+      <li><%= link_to 'その他', in_my_head_errors_path(in_my_head_id: 12), method: :get, class:"pull-down-list" %></li>
+     </ul>
+    </div>
+    <%#= render "shared/footer" %>
+  </div>
+</div>
+<%#= メイン画面 %>

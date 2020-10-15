@@ -1,0 +1,23 @@
+<%# CSS・・・assets/stylesheets/shared/header.css %>
+<header class='top-page-header'>
+  <div class='search-bar-contents'>
+    <%= link_to image_tag("errorlogo2.jpg", class:"errors-icon"), '/' %>
+    <%= form_with(url: search_errors_path, method: :get, local: true,  class: "search-form") do |f| %>
+      <%= f.text_field :keyword, placeholder:'エラー内容を検索する', class:'input-box' %>
+      <%= f.submit "Submit", type: :image, src: image_path("search.png"), class:"search-button" %>
+      <%#= image_tag "search.png" class:"search-icon" %>
+      <%# end %>
+    <% end %>
+    <div class='nav'>
+    <ul class='lists-right'>
+    <% if user_signed_in? %>
+      <li><%= link_to current_user.name, user_path(current_user[:id]), method: :get, class: "user-nickname" %></li> 
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+    <% else %>
+      <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+      <li><%= link_to 'サインアップ', new_user_registration_path, class: "sign-up" %></li>
+    <% end %>
+    </ul>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,15 @@
+.user-show{
+  width: calc(100% - 150px);
+}
+.user-wrapper{
+  display: flex;
+  justify-content: center;
+  border: 1px solid #dddddd;
+  color: #35465c;
+}
+.page-heading{
+  display: block;
+}
+.table{
+  font-size: 18px;
+}

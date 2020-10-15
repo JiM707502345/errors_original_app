@@ -1,0 +1,43 @@
+.error-registration-main {
+  width: 100%;
+  min-width: 800px;
+  height: 100%;
+  background-color:#ffffff ;
+  display: flex;
+  justify-content: center;
+}
+
+.error-form-wrap {
+  margin: 100px 0;
+  width: 65vh;
+  padding: 30px 0;
+}
+
+.error-input-default {
+  width: 100%;
+  margin-top: 0px;
+  height: 80px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #AA0000;
+  background: #ffffff;
+  font-size: 12px;
+  resize: none;
+}
+
+.error-select-box {
+  height: 30px;
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #AA0000;
+  padding-left: 20px;
+}
+
+.error-indispensable{
+  color: #AA0000;
+}
+
+.error-form-text {
+  font-size: 12px;
+  color: #AA0000;
+}

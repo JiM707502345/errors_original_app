@@ -1,0 +1,43 @@
+.error-category-all{
+  width: calc(100% - 150px);
+  height: 94vh;
+  display: grid;
+  gap: 20px;
+  grid-template-columns:1fr 1fr 1fr 1fr;
+  margin-top: 3vh;
+  padding-left: 20px;
+  padding-right: 20px;
+  overflow: scroll;
+}
+
+.one-error-category{
+  height: auto;
+}
+
+.error-category{
+  text-align: center;
+  margin: 0 auto;
+  height: auto;
+  border: 1px solid #dddddd;
+}
+
+.error-category-title{
+  color: #35465c;
+  font-size: 18px;
+}
+
+.error-category li{
+  margin: 0 10px;
+  margin-top: 20px;
+  border-bottom: 1px solid #dddddd;
+  font-size: 12px;
+}
+
+.pull-down-list{
+  color: #aa0000;
+  text-decoration: none;
+}
+.pull-down-list:hover{
+  color: #aa0000;
+  text-decoration: underline;
+}

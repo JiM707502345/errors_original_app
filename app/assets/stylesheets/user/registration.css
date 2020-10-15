@@ -1,0 +1,91 @@
+.registration-main {
+  width: 100%;
+  min-width: 800px;
+  height: 100%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+/* form-wrapは商品購入画面でも使用しています */
+.form-wrap {
+  margin: 100px 0;
+  width: 65vh;
+  background-color: #ffffff;
+  padding: 30px 0;
+  border: 1px solid #dddddd;
+}
+
+.form-header {
+  width: 100%;
+  height: 120px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.form-header-text {
+  line-height: 70px;
+}
+
+.form-group {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  margin: 5px auto;
+  padding-top: 5px;
+}
+
+
+.form-text {
+  font-size: 12px;
+  color: #AA0000;
+}
+
+
+.input-default {
+  width: 100%;
+  margin-top: 0px;
+  height: 30px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #AA0000;
+  background: #ffffff;
+  font-size: 12px;
+  resize: none;
+}
+
+
+.register-btn {
+  width:40%;
+  margin: 20px auto;
+}
+
+.register-red-btn {
+  width: 100%;
+  background: #AA0000;
+  border: 1px solid #AA0000;
+  color: #ffffff;
+  line-height: 40px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.select-box {
+  height: 30px;
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #AA0000;
+  padding-left: 20px;
+}
+
+.indispensable{
+  color: #AA0000;
+}
+
+.go-session{
+  text-align: center;
+}
+
+.form-header-text{
+  color: #AA0000;
+}

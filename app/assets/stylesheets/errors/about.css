@@ -1,0 +1,61 @@
+.about{
+
+}
+
+.about-buns{
+  width: 100vw;
+  height: 5vh;
+  background-color: #ce0f19;
+}
+.main{
+  height: calc(100vh - 10vh);
+  width: 100vw;
+  display: flex;
+  align-items: center;
+}
+.main-exp{
+  margin-left:auto;
+  margin-right: auto;
+  width: 750px;
+  height: 80vh;
+  border: 1px solid #dddddd;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.about-second-logo {
+  margin-top: 10px;
+  width: 60px;
+  height: 60px;
+}
+
+.about-messages{
+  color:#35465c;
+  font-size: 16px;
+  margin-top: 30px;
+}
+
+.about-logo-messages{
+  display: block;
+}
+.about-li{
+  font-size: 15px;
+  font-weight: bold;
+}
+.about-important{
+  font-size: 20px;
+}
+h1 strong{
+  font-weight: bold;
+  font-size: 23px;
+}
+.example{
+  padding: 30px 0;
+}
+.lets-errors{
+  color: #aa0000;
+}
+.about-important{
+  padding: 10px 0;
+}

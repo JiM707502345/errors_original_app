@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+}
+header{
+  width: 100vw;
+  background-color: #ffffff;
+  border-bottom: 1px solid #dddddd;
+}
+
+.top-page-header {
+  width: 100vw;
+  padding: 1vh 5vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-bar-contents {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.errors-icon {
+  width: 35px;
+  margin-right: 5vw;
+}
+.errors-icon:hover{
+  width: 40px;
+}
+
+.search-form {
+  width: 140vw;
+  height: 3vh;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.search-form>.input-box:hover{
+  background-color: #f8f8ff;
+}
+
+.search-form>.input-box {
+  width: 100%;
+  height: 3vh;
+  padding-left: 10px;
+  border: 1px solid #AA0000;
+}
+
+
+
+.search-button{
+  width: 28px;
+  cursor: pointer;
+  padding: 8px;
+  background-color: #AA0000;
+}
+
+.search-icon {
+  width: 100%;
+}
+
+.nav {
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 1vw 0;
+  margin-left: 20vw;
+}
+
+
+
+.lists-right {
+  display: flex;
+  list-style: none;
+  align-items: flex-end;
+}
+
+.user-nickname {
+  text-decoration: none;
+  margin-right: 3vw;
+  color:  #AA0000;
+  font-weight: bold;
+}
+.user-nickname:hover{
+  color: #ce0f19;
+}
+
+.logout {
+  text-decoration: none;
+  color: #AA0000;
+}
+.logout:hover{
+  color: #ce0f19;
+}
+
+.login {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #AA0000;
+}
+.login:hover{
+  color: #ce0f19;
+}
+
+.sign-up {
+  text-decoration: none;
+  color: #AA0000;
+}
+.sign-up:hover{
+  color: #ce0f19;
+}

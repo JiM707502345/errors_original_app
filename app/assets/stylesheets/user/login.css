@@ -1,0 +1,11 @@
+.form-wrapping {
+  margin: 100px 0;
+  width: 65vh;
+  background-color: #ffffff;
+  padding: 140px 0;
+  border: 1px solid #dddddd;
+}
+
+.go-registration{
+  text-align: center;
+}

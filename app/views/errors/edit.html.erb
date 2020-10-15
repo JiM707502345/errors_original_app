@@ -1,0 +1,101 @@
+<%= form_with model: @error, url: error_path, method: :patch, class: 'error-registration-main', local: true do |f| %>
+<div class='form-wrap'>
+  <div class='form-header'>
+  <%= image_tag("errorlogo2.jpg", class:"second-logo") %>
+    <h1 class='form-header-text'>
+      ERROR!
+    </h1>
+  </div>
+
+  <%= render 'shared/error_messages', model: f.object %>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="error-form-text">業界</label>
+      <span class="error-indispensable">必須</span>
+    </div>
+    <div class='form-text-wrap'>
+      <%= f.collection_select(:industry_id, Industry.all, :id, :name, {}, {class:"error-select-box", id:"item-category"}) %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="error-form-text">失敗の原因</label>
+      <span class="error-indispensable">必須</span>
+    </div>
+    <div class='form-text-wrap'>
+      <%= f.collection_select(:own_error_id, OwnError.all, :id, :name, {}, {class:"error-select-box", id:"item-category"}) %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="error-form-text">失敗の人的要因</label>
+      <span class="error-indispensable">必須</span>
+    </div>
+    <div class='form-text-wrap'>
+      <%= f.collection_select(:human_factor_id, HumanFactor.all, :id, :name, {}, {class:"error-select-box", id:"item-category"}) %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="error-form-text">失敗した時の頭の中</label>
+    </div>
+    <div class='form-text-wrap'>
+      <%= f.collection_select(:in_my_head_id, InMyHead.all, :id, :name, {}, {class:"error-select-box", id:"item-category"}) %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="error-form-text">失敗度数</label>
+    </div>
+    <div class='form-text-wrap'>
+    <%= f.collection_select(:frequency_id, Frequency.all, :id, :name, {}, {class:"error-select-box", id:"item-category"}) %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="error-form-text">トライ</label>
+      <span class="error-indispensable">必須</span>
+    </div>
+    <div class='form-text-wrap'>
+      <%= f.text_area :try, class:"error-input-default", id:"first-name-kana", placeholder:"トライしたこと" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="error-form-text">エラー</label>
+      <span class="error-indispensable">必須</span>
+    </div>
+    <div class='form-text-wrap'>
+      <%= f.text_area :error, class:"error-input-default", id:"first-name-kana", placeholder:"エラーしたこと" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="error-form-text">学び</label>
+      <span class="error-indispensable">必須</span>
+    </div>
+    <div class='form-text-wrap'>
+      <%= f.text_area :learning, class:"error-input-default", id:"first-name-kana", placeholder:"学んだこと" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="error-form-text">ネクストアクション</label>
+      <span class="error-indispensable">必須</span>
+    </div>
+    <div class='form-text-wrap'>
+      <%= f.text_area :next_action, class:"error-input-default", id:"first-name-kana", placeholder:"次に行動すること" %>
+    </div>
+  </div>
+
+  <div class='register-btn'>
+    <%= f.submit "保存" ,class:"register-red-btn" %>
+  </div>
+</div>
+
+<% end %>

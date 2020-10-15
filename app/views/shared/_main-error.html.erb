@@ -1,0 +1,56 @@
+<div class="error-contents">
+  <% @errors.each do |error| %>
+    <ul class="error-lists">
+      <li class="error-user-name">
+      <% if user_signed_in? && current_user.id == error.user_id %>
+      <div class="more">
+       <span class="three-dots"><%= "…" %></span>
+        <ul class="more_list">
+          <li>
+            <%= link_to '編集', edit_error_path(error.id), method: :get, class:"more-list-btn" %>
+          </li>
+          <li>
+            <%= link_to '削除', error_path(error.id), method: :delete, class:"more-list-btn" %>
+          </li>
+        </ul>
+      </div>
+      <% end %>
+      <li>
+        <p class="error-user-name-link"><%= error.user.name %>
+      </li>
+      <!--
+      <li class="error-list">
+        <%= link_to 'TRY', "#", class:"link-tag" %>
+            <p class="error-error">
+          <%= error.try %>
+        </p>
+      </li>
+      -->
+      <li class="error-list">
+        <%#= link_to 'ERROR', "#", class:"link-tag" %>
+        <p class="error-error">
+          <%= link_to error.try, error_path(error.id), method: :get, class:"go-show-path" %>
+        </p>
+      </li>
+      <li class="error-list">
+        <%#= link_to 'ERROR', "#", class:"link-tag" %>
+        <p class="error-error">
+          <%= link_to "&", error_path(error.id), method: :get, class:"and-go-show-path" %>
+        </p>
+      </li>
+       <li class="error-list">
+        <%#= link_to 'ERROR', "#", class:"link-tag" %>
+        <p class="error-error">
+          <%= link_to error.error, error_path(error.id), method: :get, class:"go-show-path" %>
+        </p>
+      </li>
+    </ul>
+  <% end %>
+  
+  <!--あなたへのおすすめ
+  <div class="recomend">
+  </div>
+  -->
+
+</div>
+

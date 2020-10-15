@@ -1,0 +1,133 @@
+<%= render "shared/header" %>
+
+<div class="wrapper">
+  <div class="side-bar">
+    <%= render "shared/side-bar" %>
+  </div>
+  <div class="error-show-contents">
+    <ul class="error-show-lists">
+      <li class="error-show-user-name">
+      <% if user_signed_in? && current_user.id == @error.user_id %>
+      <div class="more">
+       <span class="three-dots"><%= "…" %></span>
+        <ul class="more_list">
+          <li>
+            <%= link_to '編集', edit_error_path(@error.id), method: :get, class:"more-list-btn" %>
+          </li>
+          <li>
+            <%= link_to '削除', error_path(@error.id), method: :delete, class:"more-list-btn" %>
+          </li>
+        </ul>
+      </div>
+      <% end %>
+      <li>
+        <%= link_to @error.user.name, "#", class:"error-show-user-name-link" %>
+      </li>
+      
+      <li class="error-show-list">
+        <p class="link-tag"><%= '業界' %></p>
+        <p class="error-show-error">
+          <%= @error.industry.name %>
+        </p>
+      </li>
+
+      <li class="error-show-list">
+        <p class="link-tag"><%= '失敗の要因' %></p>
+        <p class="error-show-error">
+          <%= @error.own_error.name %>
+        </p>
+      </li>
+
+      <li class="error-show-list">
+        <p class="link-tag"><%= '失敗の人的要因' %></p>
+        <p class="error-show-error">
+          <%= @error.human_factor.name %>
+        </p>
+      </li>
+
+      <% if @error.in_my_head_id != 1 %>
+      <li class="error-show-list">
+        <p class="link-tag"><%= '失敗した時の頭の中' %></p>
+        <p class="error-show-error">
+          <%= @error.in_my_head.name %>
+        </p>
+      </li>
+      <% end %>
+
+      <% if @error.frequency_id != 1 %>
+      <li class="error-show-list">
+        <p class="link-tag"><%= '失敗度数' %></p>
+        <p class="error-show-error">
+          <%= @error.frequency.name %>
+        </p>
+      </li>
+      <% end %>
+
+      <li class="error-show-list">
+        <p class="link-tag"><%= 'トライ' %></p>
+        <p class="error-show-error">
+          <%= @error.try %>
+        </p>
+      </li>
+
+      <li class="error-show-list">
+        <p class="link-tag"><%= 'エラー' %></p>
+        <p class="error-show-error">
+          <%= @error.error %>
+        </p>
+      </li>
+
+      <li class="error-show-list">
+        <p class="link-tag"><%= '学び' %></p>
+        <p class="error-show-error">
+          <%= @error.learning %>
+        </p>
+      </li>
+
+      <li class="error-show-list">
+        <p class="link-tag"><%= '次のアクション' %></p>
+        <p class="error-show-error">
+          <%= @error.next_action %>
+        </p>
+      </li>
+
+      <%#= コメント入力 %>
+      <li class="error-show-list">
+        <div class="error-show-comments-box">
+          <% if current_user %>
+            <%= form_with(model: [@error, @comment], local: true) do |f| %>
+              <%= f.text_field :text, placeholder: "コメントを入力", class:"input-comment" %>
+              <%= f.submit "コメント", class:"submit-comment" %>
+            <% end %>
+          <% end %>
+        </div>
+      </li>
+      <%#= コメント入力 %>
+
+      <%#= コメント一覧 %>
+      <li class="error-show-list">
+        <div class="error-show-comments-box">
+
+        <!----
+          <% if user_signed_in? && current_user.id == @error.user_id %>
+           <div class="comment-more">
+             <span class="comment-three-dots"><%= "…" %></span>
+               <ul class="comment-more_list">
+                 <li>
+                   <%#= link_to '削除', error_path(@error.comments.ids), method: :delete, class:"comment-more-list-btn" %>
+                </li>
+              </ul>
+           </div>
+          <% end %>
+          ------>
+
+          <% @comments.each do |comment| %>
+            <p class="comment-name"><strong><%= link_to comment.user.name, "#", class:"comment-name-name" %></strong></p>
+            <p class="comment-text"><%= comment.text %></p>
+          <% end %>
+        </div>
+      </li>
+      <%#= コメント一覧 %>
+    </ul>
+  </div>
+</div>

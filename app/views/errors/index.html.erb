@@ -1,0 +1,22 @@
+<%= render "shared/header" %>
+
+<%#= メイン画面 %>
+<div class="wrapper">
+  <div class="side-bar">
+    <%= render "shared/side-bar" %>
+  </div>
+  <div class="error">
+     <% if @errors.blank? %>
+          <div class="not-errors">
+            <%= image_tag("errorlogo2.jpg", class: "not-errors-logo") %><br>
+            <h1 class="not-errors-welcome-message"><%= "Welcome to ERRORS!" %></h1><br>
+            <p class="not-errors-message"><%= "※サイドメニューバー「ERROR!」より投稿してください。"%></p>
+          </div>
+      <% else %>
+        <%= render "shared/main-error" %>
+      <% end %>
+    <%#= render "shared/footer" %>
+  </div>
+</div>
+<%#= メイン画面 %>
+

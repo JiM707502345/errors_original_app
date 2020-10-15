@@ -1,0 +1,87 @@
+<%= render "shared/header" %>
+
+<%#= メイン画面 %>
+<div class="wrapper">
+  <div class="side-bar">
+    <%= render "shared/side-bar" %>
+  </div>
+     <!--ユーザー詳細画面-->
+        <div class="user-show">
+          <div class="user-wrapper">
+            <table class="table">
+            <tbody>
+            <tr>
+              <th class="table__col1">名前</th>
+              <td class="table__col2"><%= "：#{@user.name}" %></td>
+            </tr>
+            <tr>
+              <th class="table__col1">年齢</th>
+              <td class="table__col2"><%= "：#{@user.age}" %></td>
+            </tr>
+            <tr>
+              <th class="table__col1">性別</th>
+              <td class="table__col2"><%= "：#{@user.gender.name}" %></td>
+            </tr>
+            </tbody>
+            </table>
+         </div>
+
+<% if @errors.blank? %>
+          <div class="not-errors">
+            <%= image_tag("errorlogo2.jpg", class: "not-errors-logo") %><br>
+            <h1 class="not-errors-welcome-message"><%= "Welcome to ERRORS!" %></h1><br>
+            <p class="not-errors-message"><%= "※まだ投稿がありません。サイドメニューバー「ERROR!」より投稿してください。"%></p>
+          </div>
+<% else %>
+<div class="error-contents">
+  <% @errors.each do |error| %>
+    <ul class="error-lists">
+      <li class="error-user-name">
+      <% if user_signed_in? && current_user.id == error.user_id %>
+      <div class="more">
+       <span class="three-dots"><%= "…" %></span>
+        <ul class="more_list">
+          <li>
+            <%= link_to '編集', edit_error_path(error.id), method: :get, class:"more-list-btn" %>
+          </li>
+          <li>
+            <%= link_to '削除', error_path(error.id), method: :delete, class:"more-list-btn" %>
+          </li>
+        </ul>
+      </div>
+      <% end %>
+      <li>
+        <%= link_to error.user.name, "#", mthod: :get, class:"error-user-name-link" %>
+      </li>
+
+      <li class="error-list">
+        <p class="error-error">
+          <%= link_to error.try, error_path(error.id), method: :get, class:"go-show-path" %>
+        </p>
+      </li>
+      <li class="error-list">
+        <p class="error-error">
+          <%= link_to "&", error_path(error.id), method: :get, class:"and-go-show-path" %>
+        </p>
+      </li>
+       <li class="error-list">
+        <p class="error-error">
+          <%= link_to error.error, error_path(error.id), method: :get, class:"go-show-path" %>
+        </p>
+      </li>
+    </ul>
+  <% end %>
+<% end %>
+  
+  <!--あなたへのおすすめ
+  <div class="recomend">
+  </div>
+  -->
+
+</div>
+
+
+        </div>
+  </div>
+</div>
+<%#= メイン画面 %>

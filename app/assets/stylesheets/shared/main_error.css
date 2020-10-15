@@ -1,0 +1,116 @@
+
+.error-contents{
+  height: 100vh;
+  position: relative;
+  overflow: scroll;
+  padding-top: 3vh;
+}
+
+.error-lists{
+  width: 80vw;
+  height: auto;
+  background-color: #ffffff;
+  padding: 30px 50px;
+  border: 1px solid #dddddd;
+  margin-bottom: 10px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.error-user-name-link{
+  text-decoration: none;
+  color: #000000;
+}
+
+.error-user-name-link{
+  font-size: large;
+  font-weight: bold;
+  text-decoration: none;
+  color: #000000;
+}
+
+.error-user-name-link{
+  color:#35465c;
+}
+
+.error-list{
+  text-align: center;
+}
+
+p{
+  word-wrap: break-word;
+}
+
+.error-error{
+  color: #35465c;
+  font-size: 20px;
+}
+
+.go-show-path{
+  text-decoration: none;
+  color: #35465c;
+}
+.and-go-show-path{
+  text-decoration: none;
+  color: #aa0000;
+}
+
+.three-dots{
+  font-size: 14px;
+  color: #35465c;
+}
+.three-dots:hover{
+  color: #000000;
+}
+
+/*イエスタデイワンスモア*/
+.more {
+  position: absolute;
+  cursor: pointer;
+  top: 20px;
+  right: 30px;
+  z-index: 2;
+  height: 100px;
+  width: 80px;
+  text-align: right;
+}
+
+.more:hover ul.more_list {
+  display: block;
+}
+
+.more ul.more_list {
+  position: absolute;
+  text-align: left;
+  width: 80px;
+  right: 0;
+  font-size: 12px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  display: none;
+  border-radius: 3px;
+}
+
+.more ul.more_list li {
+  border-bottom: 1px solid #dddddd;
+}
+
+.more ul.more_list li:last-child {
+  border-bottom: 0;
+}
+
+.more ul.more_list li a {
+  display: block;
+  padding: 5px;
+}
+
+.more ul.more_list li a:hover {
+  background-color: #ce0f19;
+  color: #ffffff;
+}
+
+.more-list-btn{
+  text-decoration: none;
+  color: #35465c;
+}
