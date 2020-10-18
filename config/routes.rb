@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
   root to: 'errors#index'
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    collection do
+      get 'user_like'
+    end
+  end
+  post   '/like/:error_id' => 'likes#like',   as: 'like'
+  delete '/like/:error_id' => 'likes#unlike', as: 'unlike'
+  resources :biases
   resources :errors do
     resources :comments, only: [:create]
     collection do

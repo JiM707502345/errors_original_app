@@ -5,6 +5,7 @@
   <div class="side-bar">
     <%= render "shared/side-bar" %>
   </div>
+
      <!--ユーザー詳細画面-->
         <div class="user-show">
           <div class="user-wrapper">
@@ -12,37 +13,37 @@
             <tbody>
             <tr>
               <th class="table__col1">名前</th>
-              <td class="table__col2"><%= "：#{@user.name}" %></td>
+              <td class="table__col2"><%= "：#{current_user.name}" %></td>
             </tr>
             <tr>
               <th class="table__col1">年齢</th>
-              <td class="table__col2"><%= "：#{@user.age}" %></td>
+              <td class="table__col2"><%= "：#{current_user.age}" %></td>
             </tr>
             <tr>
               <th class="table__col1">性別</th>
-              <td class="table__col2"><%= "：#{@user.gender.name}" %></td>
+              <td class="table__col2"><%= "：#{current_user.gender.name}" %></td>
             </tr>
             </tbody>
             </table>
          </div>
 
-         <%#=自身の投稿一覧といいねした投稿一覧の切り替え%>
-         <div class="user-path">
+        <%#=自身の投稿一覧といいねした投稿一覧の切り替え%>
+        <div class="user-path">
           <div class="path-fonts">
-          <%= link_to 'Errors', user_path(current_user.id), method: :get, class:"change-page-show-errors" %>
-          <%= link_to 'Likes', user_like_users_path, method: :get, class:"change-page-show-likes" %>
+          <%= link_to 'Errors', user_path(current_user.id), method: :get, class:"change-page-like-errors" %>
+          <%= link_to 'Likes', user_like_users_path, method: :get, class:"change-page-like-likes" %>
           </div>
-         </div>
+        </div>
 
         <%#=自身の投稿一覧%>
-        <% if @errors.blank? %>
+        <% if current_user.liked_errors.blank? %>
           <div class="not-errors">
             <%= image_tag("errorlogo2.jpg", class: "not-errors-logo") %><br>
-            <p class="not-errors-message"><%= "※まだ投稿がありません。サイドメニューバー「ERROR!」より投稿してください。"%></p>
+            <p class="not-errors-message"><%= "※まだいいねした投稿がありません。"%></p>
           </div>
         <% else %>
         <div class="error-contents">
-          <% @errors.each do |error| %>
+          <% current_user.liked_errors.each do |error| %>
           <ul class="error-lists">
             <li class="error-user-name">
            <% if user_signed_in? && current_user.id == error.user_id %>

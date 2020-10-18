@@ -64,6 +64,7 @@ gem 'devise'
 gem 'active_hash'
 
 gem 'jquery-rails', '~> 4.4'
+gem 'jquery-turbolinks'
 
 gem 'pry-rails', '~> 0.3.9'
 
@@ -72,3 +73,7 @@ gem "aws-sdk-s3", require: false
 group :production do
   gem 'rails_12factor'
 end
+
+gem 'kaminari'
+
+gem 'active_hash-kaminari'

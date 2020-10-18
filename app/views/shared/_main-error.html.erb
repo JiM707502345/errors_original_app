@@ -18,39 +18,35 @@
       <li>
         <p class="error-user-name-link"><%= error.user.name %>
       </li>
-      <!--
       <li class="error-list">
-        <%= link_to 'TRY', "#", class:"link-tag" %>
-            <p class="error-error">
-          <%= error.try %>
-        </p>
-      </li>
-      -->
-      <li class="error-list">
-        <%#= link_to 'ERROR', "#", class:"link-tag" %>
         <p class="error-error">
           <%= link_to error.try, error_path(error.id), method: :get, class:"go-show-path" %>
         </p>
       </li>
       <li class="error-list">
-        <%#= link_to 'ERROR', "#", class:"link-tag" %>
         <p class="error-error">
           <%= link_to "&", error_path(error.id), method: :get, class:"and-go-show-path" %>
         </p>
       </li>
        <li class="error-list">
-        <%#= link_to 'ERROR', "#", class:"link-tag" %>
         <p class="error-error">
           <%= link_to error.error, error_path(error.id), method: :get, class:"go-show-path" %>
         </p>
       </li>
+      <%#いいね%>
+      <div class="like-link" id="like-link-<%= error.id %>">
+        <% if current_user.likes.find_by(error_id: error.id) %>
+          <%= link_to unlike_path(error.id), method: :delete, remote: true do %>
+            <div class = "iine__button">♥<%= error.likes.count %></div>
+          <% end %>
+        <% else %>
+          <%= link_to like_path(error.id), method: :post, remote: true do %>
+            <div class = "iine__button">♡<%= error.likes.count %></div>
+          <% end %>
+        <% end %>
+      </div>
+      <%#いいね%>
     </ul>
   <% end %>
-  
-  <!--あなたへのおすすめ
-  <div class="recomend">
-  </div>
-  -->
-
 </div>
 
