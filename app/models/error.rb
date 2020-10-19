@@ -6,6 +6,8 @@ class Error < ApplicationRecord
   belongs_to_active_hash :in_my_head
   belongs_to_active_hash :frequency
   belongs_to :user
+  has_many :likes, dependent: :destroy
+  has_many :liking_users, through: :likes, source: :user
   has_many :comments, dependent: :destroy
 
   with_options presence: true do

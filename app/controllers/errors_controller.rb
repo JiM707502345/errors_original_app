@@ -24,7 +24,7 @@ class ErrorsController < ApplicationController
     if @error.destroy
       redirect_to root_path
     else
-      render :index
+      render :edit
     end
   end
 
@@ -68,7 +68,7 @@ class ErrorsController < ApplicationController
   end
 
   def in_my_head
-    @errors = Error.where(human_factor_id: params[:in_my_head_id])
+    @errors = Error.where(in_my_head_id: params[:in_my_head_id])
   end
 
   private

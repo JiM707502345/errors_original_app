@@ -1,15 +1,72 @@
 .user-show{
   width: calc(100% - 150px);
+  height: 100vh;
+  overflow: scroll;
 }
 .user-wrapper{
   display: flex;
   justify-content: center;
   border: 1px solid #dddddd;
   color: #35465c;
+  padding: 10px 0;
 }
 .page-heading{
   display: block;
 }
 .table{
   font-size: 18px;
+}
+
+.user-path{
+  width: 50vw;
+  height: 30px;
+  border: 1px solid #dddddd;
+  margin: 20px auto;
+  margin-bottom: -8px;
+}
+
+.path-fonts{
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 4px;
+}
+
+.change-page-show-errors{
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration:none;
+  color: #aa0000;
+}
+
+.change-page-show-likes{
+  font-size: 12px;
+  text-decoration:none;
+  color: #35465c;
+}
+.change-page-show-likes:hover{
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration:none;
+  color: #aa0000;
+}
+
+.change-page-like-errors{
+  font-size: 12px;
+  text-decoration:none;
+  color: #35465c;
+}
+
+.change-page-like-errors:hover{
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration:none;
+  color: #aa0000;
+}
+
+.change-page-like-likes{
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration:none;
+  color: #aa0000;
 }

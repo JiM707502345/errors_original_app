@@ -1,7 +1,9 @@
 class User < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :gender
-  has_many :error, class_name: 'Error', foreign_key: 'error_id'
+  has_many :error, class_name: 'Error', foreign_key: 'error_id', dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :liked_errors, through: :likes, source: :error
   has_many :comments, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
@@ -11,6 +13,7 @@ class User < ApplicationRecord
     validates :name
     validates :email
     validates :password
+
     validates :gender
     validates :age
   end

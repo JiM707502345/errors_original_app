@@ -91,6 +91,8 @@
         </p>
       </li>
 
+      
+
       <%#= コメント入力 %>
       <li class="error-show-list">
         <div class="error-show-comments-box">
@@ -107,20 +109,6 @@
       <%#= コメント一覧 %>
       <li class="error-show-list">
         <div class="error-show-comments-box">
-
-        <!----
-          <% if user_signed_in? && current_user.id == @error.user_id %>
-           <div class="comment-more">
-             <span class="comment-three-dots"><%= "…" %></span>
-               <ul class="comment-more_list">
-                 <li>
-                   <%#= link_to '削除', error_path(@error.comments.ids), method: :delete, class:"comment-more-list-btn" %>
-                </li>
-              </ul>
-           </div>
-          <% end %>
-          ------>
-
           <% @comments.each do |comment| %>
             <p class="comment-name"><strong><%= link_to comment.user.name, "#", class:"comment-name-name" %></strong></p>
             <p class="comment-text"><%= comment.text %></p>

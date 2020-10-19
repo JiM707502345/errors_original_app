@@ -75,6 +75,7 @@ header{
   display: flex;
   list-style: none;
   align-items: flex-end;
+  margin: 0 auto;
 }
 
 .user-nickname {

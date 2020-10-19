@@ -2,8 +2,8 @@
   <ul class="menu-lists">
     <li><%= link_to 'ERRORSについて', about_errors_path, class: "menu-list" %></li>
     <li><%= link_to 'マイページ', user_path(current_user[:id]), method: :get, class: "menu-list" %></li>
-    <li><%= link_to 'エラーカテゴリー', category_show_errors_path, method: :get, class:"menu-list" %></li>
-    <li><%= link_to 'バイアス一覧', "#", class: "menu-list" %></li>
+    <li><%= link_to 'カテゴリー検索', category_show_errors_path, method: :get, class:"menu-list" %></li>
+    <li><%= link_to 'バイアス一覧', biases_path, method: :get, class: "menu-list" %></li>
   </ul>
   <div class="contribution-btn">
     <%= link_to 'ERROR!', new_error_path, class: 'contribution-btn-text' %>

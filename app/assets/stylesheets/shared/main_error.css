@@ -114,3 +114,13 @@ p{
   text-decoration: none;
   color: #35465c;
 }
+
+/*いいねボタン*/
+.iine__button{
+  color: #35465c;
+  font-size: 14px;
+  display: inline-block;
+  position: absolute;
+  right: 40px;
+  bottom: 20px;
+}
