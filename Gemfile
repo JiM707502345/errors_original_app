@@ -71,9 +71,10 @@ gem 'pry-rails', '~> 0.3.9'
 gem "aws-sdk-s3", require: false
 
 group :production do
-  gem 'rails_12factor'
+  gem 'unicorn', '5.4.1'
 end
 
 gem 'kaminari'
 
 gem 'active_hash-kaminari'
+
