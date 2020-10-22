@@ -82,4 +82,3 @@ end
 gem 'kaminari'
 
 gem 'active_hash-kaminari'
-
