@@ -5,7 +5,7 @@ errors_original_app
 この世界から「失敗はいけないものだ」という概念をなくすことを誓います。失敗から学ぶ社会を作るために「ERRORS」を開発しました。失敗は恥ずかしいという文化が終わって欲しい。向学心のある国民性を実現したい。挑戦する人を応援できる社会にしたい。学べるウェブサービスを作りたい。こういった思いで制作しました。また失敗と個人のデータが取れることでデータに強くなり、必然的に通信機能やサーバーシステムを強くなり、軍事システムも強くなり、国が強くなりということが実現すれば米中に対抗できるような国になリます。善い国を作るためのツールです。
 
 ## URL
-heroku：https://errors-original-app.herokuapp.com/
+heroku：https://errors-original-app.herokuapp.com/<br>
 AWS：18.180.167.170
 
 
@@ -162,3 +162,18 @@ belongs_to :message
 
 ローカルでの動作方法
 git cloneしてから、ローカルで動作をさせるまでに必要なコマンドを記述しましょう。この時、アプリケーション開発に使用した環境を併記することを忘れないでください（パッケージやRubyのバージョンなど）。
+Ruby 2.6.5<br>
+Python<br>
+JavaScript<br>
+Ruby on Rails 6.0.3.4<br>
+mysql<br>
+AWS<br>
+GitHub<br>
+Docker<br>
+CircleCI<br>
+Linux<br>
+HTML<br>
+CSS<br>
+Ajax<br>
+jQuery<br>
+heroku<br>
