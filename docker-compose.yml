@@ -3,10 +3,13 @@ services:
   db:
     image: mysql:5.7
     environment:
-      MYSQL_DATABASE_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: root
     ports:
       - "4306:3306"
+    volumes:
+      - ./mysql-confd:/etc/mysql/conf.d
+
 
   web:
     build: .
@@ -17,3 +20,11 @@ services:
       - "3000:3000"
     links:
       - db
+      - chrome
+    stdin_open: true
+    tty: true
+
+  chrome:
+    image: selenium/standalone-chrome:3.141.59-dubnium
+    ports:
+      - 4444:4444

@@ -1,24 +1,30 @@
-# コピペでOK, app_nameもそのままでOK
-# 19.01.20現在最新安定版のイメージを取得
 FROM ruby:2.6.5
 
-# 必要なパッケージのインストール（基本的に必要になってくるものだと思うので削らないこと）
-RUN apt-get update -qq && \
-    apt-get install -y build-essential \ 
-                       libpq-dev \        
-                       nodejs           
+FROM ruby:2.6.5
 
-# 作業ディレクトリの作成、設定
-RUN mkdir /app_name 
-##作業ディレクトリ名をAPP_ROOTに割り当てて、以下$APP_ROOTで参照
+WORKDIR /tmp
+RUN apt update && apt install -y lsb-release \ 
+    && apt remove -y libmariadb-dev-compat libmariadb-dev
+
+RUN wget https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-common_8.0.18-1debian10_amd64.deb \
+    https://dev.mysql.com/get/Downloads/MySQL-8.0/libmysqlclient21_8.0.18-1debian10_amd64.deb \
+    https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-community-client-core_8.0.18-1debian10_amd64.deb \
+    https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-community-client_8.0.18-1debian10_amd64.deb \
+    https://dev.mysql.com/get/Downloads/MySQL-8.0/libmysqlclient-dev_8.0.18-1debian10_amd64.deb
+
+RUN dpkg -i mysql-common_8.0.18-1debian10_amd64.deb \
+    libmysqlclient21_8.0.18-1debian10_amd64.deb \
+    mysql-community-client-core_8.0.18-1debian10_amd64.deb \
+    mysql-community-client_8.0.18-1debian10_amd64.deb \
+    libmysqlclient-dev_8.0.18-1debian10_amd64.deb
+
+RUN mkdir /app_name
 ENV APP_ROOT /app_name 
 WORKDIR $APP_ROOT
 
-# ホスト側（ローカル）のGemfileを追加する（ローカルのGemfileは【３】で作成）
 ADD ./Gemfile $APP_ROOT/Gemfile
 ADD ./Gemfile.lock $APP_ROOT/Gemfile.lock
 
-# Gemfileのbundle install
 RUN gem install bundler
 RUN bundle install
 ADD . $APP_ROOT
