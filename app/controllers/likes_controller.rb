@@ -15,5 +15,4 @@ class LikesController < ApplicationController
     @error = Error.find(params[:error_id])
     @id_name = "#like-link-#{@error.id}"
   end
-
 end
