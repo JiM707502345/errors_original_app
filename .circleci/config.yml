@@ -2,27 +2,27 @@
 #
 # Check https://circleci.com/docs/2.0/language-ruby/ for more details
 #
-version: 2
-jobs:
-  build:
-    docker:
-      - image: circleci/ruby:2.6.5-node-browsers
-        environment:
-          RAILS_ENV: test
-          MYSQL_HOST: 127.0.0.1
-          MYSQL_USERNAME: 'root'
-          MYSQL_PASSWORD: ''
-          MYSQL_PORT: 3306
-      - image: circleci/mysql:5.6
-        environment:
-          MYSQL_ALLOW_EMPTY_PASSWORD: true
-          MYSQL_ROOT_PASSWORD: ''
-          MYSQL_DATABASE: circle_ci_test-test
+# version: 2
+# jobs:
+#   build:
+#     docker:
+#       - image: circleci/ruby:2.6.5-node-browsers
+#         environment:
+#           RAILS_ENV: test
+#           MYSQL_HOST: 127.0.0.1
+#           MYSQL_USERNAME: 'root'
+#           MYSQL_PASSWORD: ''
+#           MYSQL_PORT: 3306
+#       - image: circleci/mysql:5.6
+#         environment:
+#           MYSQL_ALLOW_EMPTY_PASSWORD: true
+#           MYSQL_ROOT_PASSWORD: ''
+#           MYSQL_DATABASE: circle_ci_test-test
 
-    working_directory: ~/circle-ci-test
+#     working_directory: ~/circle-ci-test
 
-    steps:
-      - checkout
+#     steps:
+#       - checkout
 
       # - restore_cache:
       #     keys:
@@ -56,6 +56,3 @@ jobs:
       # - store_artifacts:
       #     path: /tmp/test-results
       #     destination: test-results
-      
-
-
