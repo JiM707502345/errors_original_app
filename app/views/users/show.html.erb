@@ -48,9 +48,7 @@
           <div class="path-fonts">
           <%= link_to 'Errors', user_path(@user.id), method: :get, class:"change-page-show-errors" %>
           <%#=他人のいいねした投稿は見ることができない%>
-          <% if @user.id == current_user.id %>
-          <%= link_to 'Learned', user_like_users_path, method: :get, class:"change-page-show-likes" %>
-          <% end %>
+          <%= link_to 'Learned', user_like_user_path(@user.id), method: :get, class:"change-page-show-likes" %>
           </div>
         </div>
         
