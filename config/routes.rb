@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
   root to: 'errors#index'
+  resources :relationships, only: [:create, :destroy]
   resources :users, only: [:show] do
+    get :followings, on: :member
+    get :followers, on: :member
     collection do
       get 'user_like'
     end

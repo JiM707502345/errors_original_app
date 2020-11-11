@@ -6,6 +6,11 @@
   margin: 0 auto;
 }
 
+.error-biase{
+  height: 100vh;
+  overflow: scroll;
+}
+
 .bias-name{
   color: #35465c;
   font-size: 20px;

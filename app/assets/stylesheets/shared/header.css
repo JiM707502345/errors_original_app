@@ -21,11 +21,8 @@ header{
 }
 
 .errors-icon {
-  width: 35px;
-  margin-right: 5vw;
-}
-.errors-icon:hover{
-  width: 40px;
+  width: 36px;
+  height: 36px;
 }
 
 .search-form {
@@ -33,6 +30,7 @@ header{
   height: 3vh;
   display: flex;
   margin-bottom: 5px;
+  margin-left: 5%;
 }
 
 .search-form>.input-box:hover{
@@ -60,7 +58,7 @@ header{
 }
 
 .nav {
-  font-size: 12px;
+  font-size: 14px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
