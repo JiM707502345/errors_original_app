@@ -8,13 +8,14 @@
     <li><%= link_to 'マイページ', user_path(current_user[:id]), method: :get, class: "menu-list" %></li>
     <li><%= link_to 'カテゴリー検索', category_show_errors_path, method: :get, class:"menu-list" %></li>
     <li><%= link_to 'バイアス一覧', biases_path, method: :get, class:"menu-list" %></li>
+    <li><%= link_to '体調診断アプリ',  "https://condition-original-app.herokuapp.com/", class: "menu-list" %></li>
   </ul>
   <div class="contribution-btn">
     <%= link_to 'ERROR!', new_error_path, class: 'contribution-btn-text' %>
   </div>
 </div>
   </div>
-  <div class="error">
+  <div class="error-biase">
         <%#=バイアス一覧%> 
         <% @biases.each do |biase| %>
           <div class="bias">

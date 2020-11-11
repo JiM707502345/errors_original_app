@@ -16,7 +16,12 @@
       </div>
       <% end %>
       <li>
-        <p class="error-user-name-link"><%= error.user.name %>
+        <%= link_to user_path(error.user_id)  do %>
+          <%= image_tag "human.png", class:"card-img" %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to error.user.name, user_path(error.user_id), class:"error-user-name-link" %>
       </li>
       <li class="error-list">
         <p class="error-error">
@@ -37,11 +42,11 @@
       <div class="like-link" id="like-link-<%= error.id %>">
         <% if current_user.likes.find_by(error_id: error.id) %>
           <%= link_to unlike_path(error.id), method: :delete, remote: true do %>
-            <div class = "iine__button">♥<%= error.likes.count %></div>
+            <div class = "iine__button__after">LEARN<%= " #{error.likes.count}" %></div>
           <% end %>
         <% else %>
           <%= link_to like_path(error.id), method: :post, remote: true do %>
-            <div class = "iine__button">♡<%= error.likes.count %></div>
+            <div class = "iine__button">ERROR<%= " #{error.likes.count}" %></div>
           <% end %>
         <% end %>
       </div>

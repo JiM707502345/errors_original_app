@@ -1,0 +1,27 @@
+<%= render "shared/header" %>
+
+<%#= メイン画面 %>
+<div class="wrapper">
+  <div class="side-bar">
+    <%= render "shared/side-bar" %>
+  </div>
+
+  <div class="user-following">
+  <% if @users.blank? %>
+    <div class="not-errors">
+      <%= image_tag("errorlogo2.jpg", class: "not-errors-logo") %><br>
+      <p class="not-errors-message"><%= "※フォローしているユーザーはいません。"%></p>
+    </div>
+  <% else %>
+  <% @users.each do |user| %>
+    <div class="user-follow-show">
+      <%= link_to user_path(user.id)  do %>
+        <%= image_tag "human.png", class:"card-img-follow" %>
+      <% end %>
+      <%= link_to user.name, user_path(user.id), class:"user-name-each" %>
+    </div>
+  <% end %>
+  <% end %>
+  </div>
+</div>
+<%#= メイン画面 %>

@@ -6,13 +6,17 @@
   width: 150px;
   height: 100vh;
 }
-.error {
+.error{
   position: relative;
   background-color: #ffffff;
   width: calc(100% - 150px);
   overflow: scroll;
   scroll-snap-type: y mandatory;
   height: 100vh;
+}
+
+.error-biase{
+   background-color: #ffffff;
 }
 
 .mail-bottom{

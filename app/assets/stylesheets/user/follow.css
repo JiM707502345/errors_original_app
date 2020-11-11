@@ -1,0 +1,25 @@
+.user-following{
+  width: calc(100vw - 150px);
+  height: 100vh;
+  overflow: scroll;
+}
+
+.card-img-follow{
+  width: 50px;
+  height: 50px;
+}
+
+.user-name-each{
+  text-decoration: none;
+  color: #35465c;
+  font-size: 35px;
+  justify-content: center;
+
+}
+
+.user-follow-show{
+  border-bottom: 1px solid #dddddd;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}

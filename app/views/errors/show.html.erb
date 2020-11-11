@@ -20,8 +20,15 @@
         </ul>
       </div>
       <% end %>
+
       <li>
-        <%= link_to @error.user.name, "#", class:"error-show-user-name-link" %>
+        <%= link_to user_path(@error.user_id)  do %>
+          <%= image_tag "human.png", class:"card-img" %>
+        <% end %>
+      </li>
+
+      <li>
+        <%= link_to @error.user.name, user_path(@error.user_id), class:"error-show-user-name-link" %>
       </li>
       
       <li class="error-show-list">
