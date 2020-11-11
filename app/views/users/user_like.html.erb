@@ -12,30 +12,32 @@
             <table class="table">
             <tbody>
             <tr>
-              <%= link_to user_path(current_user.id)  do %>
+              <%= link_to user_path(@user.id)  do %>
                 <%= image_tag "human.png", class:"card-img-show" %>
               <% end %>
             </tr>
             <tr>
               <th class="table__col1">Name</th>
-              <td class="table__col3"><%= "：#{current_user.name}" %></td>
+              <td class="table__col3"><%= "：#{@user.name}" %></td>
             </tr>
             <tr>
               <th class="table__col1">Age</th>
-              <td class="table__col2"><%= "：#{current_user.age} " %></td>
+              <td class="table__col2"><%= "：#{@user.age} " %></td>
             </tr>
             <tr>
               <th class="table__col1">Gender</th>
-              <td class="table__col2"><%= "：#{current_user.gender.name}" %></td>
+              <td class="table__col2"><%= "：#{@user.gender.name}" %></td>
             </tr>
             </tbody>
             </table>
             <%#=フォローボタン%>
-            <%= render 'relationships/follow_button', user: current_user %>
+            <%= render 'relationships/follow_button', user: @user %>
+            <% if @user.id == current_user.id %>
             <%= link_to 'Edit profile', edit_user_registration_path, class:"edit-user" %>
+            <% end %>
             <div class="following-followers">
-            <%= link_to "#{current_user.followings.count} Following", followings_user_path(current_user.id), class: "following-btn" %>&nbsp;&nbsp;&nbsp;&nbsp;
-            <%= link_to "#{current_user.followers.count} Followers", followers_user_path(current_user.id), class: "following-btn" %>
+            <%= link_to "#{@user.followings.count} Following", followings_user_path(@user.id), class: "following-btn" %>&nbsp;&nbsp;&nbsp;&nbsp;
+            <%= link_to "#{@user.followers.count} Followers", followers_user_path(@user.id), class: "following-btn" %>
             </div>
             <%#=フォローボタン%>
          </div>
@@ -43,20 +45,20 @@
         <%#=自身の投稿一覧といいねした投稿一覧の切り替え%>
         <div class="user-path">
           <div class="path-fonts">
-          <%= link_to 'Errors', user_path(current_user.id), method: :get, class:"change-page-like-errors" %>
-          <%= link_to 'Learned', user_like_users_path(current_user.id), method: :get, class:"change-page-like-likes" %>
+          <%= link_to 'Errors', user_path(@user.id), method: :get, class:"change-page-like-errors" %>
+          <%= link_to 'Learned', user_like_user_path(@user.id), method: :get, class:"change-page-like-likes" %>
           </div>
         </div>
 
         <%#=自身の投稿一覧%>
-        <% if current_user.liked_errors.blank? %>
+        <% if @users.blank? %>
           <div class="not-errors">
             <%= image_tag("errorlogo2.jpg", class: "not-errors-logo") %><br>
             <p class="not-errors-message"><%= "※まだ学習した投稿がありません。"%></p>
           </div>
         <% else %>
         <div class="error-contents">
-          <% current_user.liked_errors.each do |error| %>
+          <% @users.each do |error| %>
           <ul class="error-lists">
             <li class="error-user-name">
            <% if user_signed_in? && current_user.id == error.user_id %>
