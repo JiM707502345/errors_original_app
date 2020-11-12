@@ -33,7 +33,7 @@
             <%#=フォローボタン%>
             <%= render 'relationships/follow_button', user: @user %>
             <% if @user.id == current_user.id %>
-            <%= link_to 'Edit profile', edit_user_registration_path, class:"edit-user" %>
+            <%= link_to 'Edit profile', edit_user_registration_path(current_user.id), class:"edit-user" %>
             <% end %>
             <div class="following-followers">
             <%= link_to "#{@user.followings.count} Following", followings_user_path(@user.id), class: "following-btn" %>&nbsp;&nbsp;&nbsp;&nbsp;
