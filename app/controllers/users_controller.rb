@@ -1,15 +1,11 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @errors = Error.where(user_id: params[:id]).order('created_at DESC')
-    # @errors = @user.all.order("created_at DESC")
-    # @error = Error.find(params[:id])
-    # @relationship = current_user.relationships.find_by(follow_id: @user.id)
-    # @set_relationship = current_user.relationships.new
+    @errors = Error.where(user_id: @user.id).order('created_at DESC')
   end
 
   def edit
-    @error = Error.find(params[:id]) #IDを検索する処理を記載
+    @error = Error.find(params[:id])
   end
 
   def user_like
