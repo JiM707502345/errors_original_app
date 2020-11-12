@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
   root to: 'errors#index'
+  resources :messages, only: [:create]
+  resources :rooms, only: [:create,:show]
   resources :relationships, only: [:create, :destroy]
   resources :users do
     member do

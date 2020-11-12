@@ -22,7 +22,7 @@
             </tr>
             <tr>
               <th class="table__col1">Age</th>
-              <td class="table__col2"><%= "：#{@user.age} " %></td>
+              <td class="table__col2"><%= "：#{@user.age}歳" %></td>
             </tr>
             <tr>
               <th class="table__col1">Gender</th>
@@ -40,7 +40,27 @@
             <%= link_to "#{@user.followers.count} Followers", followers_user_path(@user.id), class: "following-btn" %>
             </div>
             <%#=フォローボタン%>
+
+            <%#=DM%>
+            <% unless @user.id == current_user.id %>
+              <% if (current_user.following? @user) && (@user.following? current_user)  %>
+                <% if @isRoom == true %>
+                  <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="btn btn-primary btn-lg"><%= image_tag "dm.png", class:"dm-img" %></a>
+                <% else %>
+                  <%= form_with model: @room, local: true do |f| %>
+                    <%= fields_for @entry do |e| %>
+                      <%= e.hidden_field :user_id, value: @user.id %>
+                    <% end %>
+                    <%= f.submit "Submit", type: :image, src: image_path("dm.png"), class:"dm-img" %>
+                    <%#= f.submit "チャットを始める", class:"btn btn-primary btn-lg user-show-chat"%>
+                  <% end %>
+                <% end %>
+              <% end %>
+            <% end %>
+            <%#=DM%>
+            
          </div>
+         
          
          <%#=自身の投稿一覧といいねした投稿一覧の切り替え%>
          
