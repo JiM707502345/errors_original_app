@@ -1,0 +1,61 @@
+.error-dm{
+  position: relative;
+}
+
+.posts-message{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 10px 0 100px 10px;
+  width: calc(100vw - 150px);
+  border: 1px solid #dddddd;
+}
+
+.form-message-field{
+  width: 90%;
+  height: 30px;
+  border: 1px solid #dddddd;
+  font-size: 12px;
+}
+
+.form-submit-message{
+  color: #35465c;
+  font-size: 12px;
+  width: 9%;
+  height: 30px;
+  border: 1px solid #dddddd;
+  background-color: #ffffff;
+}
+
+.form-submit-message:hover{
+  color: #ffffff;
+  background-color: #dddddd;
+}
+
+.dm-list{
+  width: calc(100vw - 150px);
+  height: calc(100vh - 192px); overflow: scroll; 
+}
+
+.room-user-name{
+  color: #35465c;
+  font-size: 18px; 
+  height: 50px;
+  border-bottom: 1px solid #dddddd;
+  position: relative;
+}
+
+.room-user-nama-inline{
+  position: absolute;
+  top: 25%;
+  right: 50%;
+}
+
+.chat{
+  font-size: 16px;
+}
+
+.chats{
+  padding: 10px;
+}
+

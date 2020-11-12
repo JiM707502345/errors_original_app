@@ -1,0 +1,59 @@
+<div class="wrapper">
+  <div class="side-bar">
+    <div class="menu">
+    <ul class="menu-lists">
+      <li><%= link_to 'トップページへ', root_path, class: "menu-list" %></li>
+      <li><%= link_to 'ERRORSについて', about_errors_path, class: "menu-list" %></li>
+      <li><%= link_to 'マイページ', user_path(current_user[:id]), method: :get, class: "menu-list" %></li>
+      <li><%= link_to 'カテゴリー検索', category_show_errors_path, method: :get, class:"menu-list" %></li>
+      <li><%= link_to 'バイアス一覧', biases_path, method: :get, class:"menu-list" %></li>
+      <li><%= link_to '体調診断アプリ',  "https://condition-original-app.herokuapp.com/", class: "menu-list" %></li>
+    </ul>
+    <div class="contribution-btn">
+      <%= link_to 'ERROR!', new_error_path, class: 'contribution-btn-text' %>
+    </div>
+    </div>
+  </div>
+
+  <div class="error-dm">
+    <%#= 名前 %>
+    <% @entries.each do |e| %>
+    <% unless e.user == current_user %>
+      <div class="room-user-name">
+        <p class="room-user-nama-inline"><%= "#{e.user.name}" %></p>
+      </div>
+    <% end %>
+    <% end %>
+    <%#= 名前 %>
+
+    <%#= メッセージ欄 %>
+    <div class="dm-list">
+      <div class="chats">
+        <% if @messages.blank? %>
+          <div class="not-errors">
+            <%= image_tag("errorlogo2.jpg", class: "not-errors-logo") %><br>
+            <p class="not-errors-message"><%= "メッセージは有りません"%></p>
+          </div>
+        <% else %>
+          <% @messages.each do |m| %>
+            <div class="chat">
+              <strong style="font-weight:bold;"><%= m.user.name %></strong>
+              <%= "：#{m.message}" %><br>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <%#= メッセージ欄 %>
+    
+    <%#= 送信フォーム %>
+      <div class="posts-message">
+        <%= form_with model: @message, local: true do |f| %>
+          <%= f.text_field :message, placeholder: "メッセージを入力して下さい" , size: 70, class:"form-message-field" %>
+          <%= f.hidden_field :room_id, value: @room.id %>
+          <%= f.submit "送信",class: 'form-submit-message'%>
+        <% end %>
+      </div>
+    <%#= 送信フォーム %>
+  </div>
+</div>
