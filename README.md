@@ -54,7 +54,7 @@ https://i.gyazo.com/7937648baed453b63deb8eb42bf40c5f.gif
 https://i.gyazo.com/c5a99d09e8f735b3f1801ac06b8ed662.gif
 ### カテゴリ検索
 https://i.gyazo.com/6aaa6e7293de7d911d0d6cefdc126bb8.gif
-# ユーザー詳細/ダイレクトメッセージ/フォロー
+### ユーザー詳細/ダイレクトメッセージ/フォロー
 https://i.gyazo.com/6ff6ba19f8af1aa98ba27af42e535282.gif
 ### いいね機能
 https://i.gyazo.com/b658b350443ae3c1b16b0b9c0ec3985e.gif
