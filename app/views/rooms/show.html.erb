@@ -32,7 +32,7 @@
         <% if @messages.blank? %>
           <div class="not-errors">
             <%= image_tag("errorlogo2.jpg", class: "not-errors-logo") %><br>
-            <p class="not-errors-message"><%= "メッセージは有りません"%></p>
+            <p class="not-errors-message"><%= "※メッセージは有りません。"%></p>
           </div>
         <% else %>
           <% @messages.each do |m| %>
