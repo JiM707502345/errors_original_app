@@ -50,21 +50,22 @@ ID:jin/Pass:0139
 ## 実装した機能についてのGIFと説明
 # ログイン/サインアップ
 https://i.gyazo.com/7937648baed453b63deb8eb42bf40c5f.gif
-# 検索/詳細/コメント
+### 検索/詳細/コメント
 https://i.gyazo.com/c5a99d09e8f735b3f1801ac06b8ed662.gif
-# カテゴリ検索
+### カテゴリ検索
 https://i.gyazo.com/6aaa6e7293de7d911d0d6cefdc126bb8.gif
 # ユーザー詳細/ダイレクトメッセージ/フォロー
 https://i.gyazo.com/6ff6ba19f8af1aa98ba27af42e535282.gif
-# いいね機能
+### いいね機能
 https://i.gyazo.com/b658b350443ae3c1b16b0b9c0ec3985e.gif
-# およそ180の人間の思い込み/バイアス一覧
+### およそ180の人間の思い込み/バイアス一覧
 https://i.gyazo.com/73bd3c68562f8a52e33eeab66ba9906d.gif
 
-実装予定の機能##
-洗い出した要件の中から、今後実装予定のものがあれば記述しましょう。
+### 実装予定の機能
+失敗と原因やバイアスを照らし合わせて、データ化する機能
 
 ## データベース設計
+[ER図]: https://gyazo.com/be362dc10866675ff714640cd0192c9e "ER図"
 
 ## users テーブル
 | Column    | Type    | Options     |
@@ -163,22 +164,12 @@ belongs_to :message
 -belongs_to :room
 -belongs_to :user
 
-## cloud_foundings テーブル
-| Column | Type    | Options     |
-| ------ | ------- | ----------- |
-| fund   | integer | null: false |
+### ローカルでの動作方法
+$ git clone git@github.com:JiM707502345/errors_original_app.git<br>
+$ bundle install<br>
+$ rails db:create<br>
+$ rails db:migrate<br>
 
-### association
--belongs_to :cloud_founding
-
-## ER図
-[ER図]: https://gyazo.com/be362dc10866675ff714640cd0192c9e "ER図"
-
-ローカルでの動作方法
-$ git clone git@github.com:JiM707502345/errors_original_app.git
-$ bundle install
-$ rails db:create
-$ rails db:migrate
 Ruby 2.6.5<br>
 JavaScript<br>
 Ruby on Rails 6.0.3.4<br>
